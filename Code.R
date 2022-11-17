@@ -29,6 +29,7 @@ bytesf%>%
   select(c(Date,client,Median))%>%
   ggplot(aes(Date,Median))+
   geom_line(aes(group=client,colour=client),size=1)+
+  geom_hline(yintercept = 0) +
   scale_y_continuous(limits=c(0,2600),breaks=c(0,200,400,600,800,1000,1200,1400,1600,1800,2000,2200,2400,2600))+
   scale_colour_manual(values=c("#87CEEB","#0047AB"))+
   scale_x_date(date_labels = "%Y", limit=c(as.Date("2010-11-15"),as.Date("2022-10-01")),date_breaks = "1 year")+
